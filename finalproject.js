@@ -1,9 +1,9 @@
-const more=document.querySelector('.smallspanend');
+const more = document.querySelector('.smallspanend');
 more.addEventListener('click', showModal);
-function showModal(){
+function showModal() {
     const divModal = document.createElement('div')
     divModal.classList.add('main')
-    divModal.insertAdjacentHTML('afterbegin',`
+    divModal.insertAdjacentHTML('afterbegin', `
     <div class="newmodal">
         <div class="title-main">
             <h1 class="title">Lorem ipsum</h1>
@@ -31,10 +31,16 @@ function showModal(){
     `)
     document.body.appendChild(divModal)
 }
-window.onclick = function(event) {
+window.onclick = function (event) {
     let modal = document.querySelector('.newmodal button')
-        let close = document.querySelector('.title-main span')
-        if(event.target == modal || event.target == close){
-            document.querySelector('.main').remove()
-        }
+    let close = document.querySelector('.title-main span')
+    if (event.target == modal || event.target == close) {
+        document.querySelector('.main').remove()
     }
+}
+const liItems = document.querySelectorAll('.lihome')
+for (const item of liItems) {
+    item.onclick = function() {
+        this.querySelector('.secondmenu').classList.toggle('mainmenu')
+    } 
+}
