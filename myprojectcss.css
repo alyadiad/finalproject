@@ -296,3 +296,113 @@ i {
     height: 8px;
     background-color: #A292B3;
 }
+
+
+
+.header {
+    width: 100%;
+    background-color: rgba(255, 91, 137);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.menu_ul {
+    width: 50%;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item {
+    color: #fff;
+    padding: 0;
+}
+
+    .nav-item a {
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 700;
+    }
+
+        .nav-item a:hover {
+            border-bottom: 3px solid rgb(247, 39, 74);
+        }
+
+.menu-icon {
+    display: none;
+}
+
+/* Стили для мобильной версии (если ширина от 0 до 480px, то будут применяться такие стили */
+@media (max-width:480px) {
+
+    .menu-icon {
+        display: inline-block;
+        height: 20px;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: rgb(255, 255, 255);
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    /* Для анимации превращения в крестик - верхняя часть поворачивается */
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    /* Средняя полоска исчезает */
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    /* Нижняя поворачивается */
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+
+    /* Изменение стилей для самого меню, чтоб отображалось на всю страницу и перестраивалось */
+    .menu_ul {
+        transform: translateY(-110%);
+        width: 100%;
+        background-color: rgba(255, 91, 137);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Чтоб появлялось по клику с анимацией */
+    .nav-opened {
+        transform: translateY(0%);
+        transition: transform 0.5s;
+    }
+
+    .nav-item a {
+        margin: 20px 0;
+        font-size: 34px;
+    }
+}

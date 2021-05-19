@@ -38,3 +38,13 @@ window.onclick = function (event) {
         document.querySelector('.main').remove()
     }
 }
+const menuIcon = document.querySelector('.menu-icon')
+const nav = document.querySelector('.menu_ul')
+
+menuIcon.addEventListener('click', showMenu)
+
+/* Меняем стили по клику*/
+function showMenu() {
+    nav.classList.toggle('nav-opened')
+    menuIcon.classList.toggle("change");
+}
