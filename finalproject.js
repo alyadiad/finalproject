@@ -44,3 +44,13 @@ for (const item of liItems) {
         this.querySelector('.secondmenu').classList.toggle('mainmenu')
     } 
 }
+const menuIcon = document.querySelector('.menu-icon')
+const nav = document.querySelector('.menu_ul')
+
+menuIcon.addEventListener('click', showMenu)
+
+
+function showMenu() {
+    nav.classList.toggle('nav-opened')
+    menuIcon.classList.toggle("change");
+}
